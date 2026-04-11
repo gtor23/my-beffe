@@ -6,7 +6,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node --env-file .env --loader ts-node/esm src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -29,6 +34,12 @@
   },
   "devDependencies": {
     "@types/node": "25.5.2",
+    "@typescript-eslint/eslint-plugin": "8.58.1",
+    "@typescript-eslint/parser": "8.58.1",
+    "eslint": "10.2.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
+    "prettier": "3.8.2",
     "ts-node": "10.9.2",
     "typescript": "6.0.2"
   }
